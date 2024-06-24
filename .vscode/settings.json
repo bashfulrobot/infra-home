@@ -1,0 +1,7 @@
+{
+    "yaml.schemas": {
+        "kubernetes": "*.yaml",
+        "https://github.com/bashfulrobot/linkr/blob/9d4ec22a22f9ed0a411b9c0b1de4e12c2adf790d/json-schema/linkr.json": "config.yaml",
+        "https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json": "file:///home/dustin/dev/infra-home/apps/spitfire/heimdall/docker-compose.yaml"
+    }
+}
