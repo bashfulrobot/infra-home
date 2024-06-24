@@ -1,0 +1,11 @@
+machine:
+  type: init
+cluster:
+  allowSchedulingOnControlPlanes: true
+  apiServer:
+    admissionControl:
+      - name: PodSecurity
+        configuration:
+          exemptions:
+            namespaces:
+              - sysdig-agent

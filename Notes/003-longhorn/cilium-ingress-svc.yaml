@@ -1,0 +1,48 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    meta.helm.sh/release-name: cilium
+    meta.helm.sh/release-namespace: kube-system
+  creationTimestamp: "2024-06-05T23:30:09Z"
+  labels:
+    app.kubernetes.io/managed-by: Helm
+    cilium-lb: "true"
+    cilium.io/ingress: "true"
+  name: cilium-ingress
+  namespace: kube-system
+  resourceVersion: "910718"
+  uid: c3a38def-2a55-4f5c-9f7d-7c48e6b884c0
+spec:
+  allocateLoadBalancerNodePorts: true
+  clusterIP: 10.109.58.253
+  clusterIPs:
+  - 10.109.58.253
+  externalTrafficPolicy: Cluster
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - name: http
+    nodePort: 32544
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  - name: https
+    nodePort: 30173
+    port: 443
+    protocol: TCP
+    targetPort: 443
+  sessionAffinity: None
+  type: LoadBalancer
+status:
+  conditions:
+  - lastTransitionTime: "2024-06-10T03:49:56Z"
+    message: ""
+    reason: satisfied
+    status: "True"
+    type: cilium.io/IPAMRequestSatisfied
+  loadBalancer:
+    ingress:
+    - ip: 172.16.0.150

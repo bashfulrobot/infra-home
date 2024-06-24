@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nvolpod
+spec:
+  containers:
+    - name: test
+      image: nginx
+      volumeMounts:
+        - mountPath: "/var/www/html" # folder in pod mointing my claim
+          name: mypd
+  volumes:
+    - name: mypd # volume name the container can mount
+      persistentVolumeClaim: # source of stroage
+        claimName: my-pvc # name of pvc created
